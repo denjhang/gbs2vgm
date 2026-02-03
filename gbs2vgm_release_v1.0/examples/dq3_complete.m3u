@@ -1,0 +1,12 @@
+# Dragon Warrior III (Game Boy Color) - M3U Playlist
+# @TITLE Dragon Warrior III
+# @COMPOSER Koichi Sugiyama
+# @ARTIST Chunsoft, Tose, Enix
+# @DATE 2000-12-08
+# @RIPPER Denjhang
+# @TAGGER Claude & Denjhang
+#
+# Format: filename::GBS,subsong,title,duration,,loop_count
+dq3/CGB-BD3J-JPN.gbs::GBS,0,Overture ~ Roto's Theme,1:39,,2
+dq3/CGB-BD3J-JPN.gbs::GBS,1,Intermezzo,0:15,,1
+dq3/CGB-BD3J-JPN.gbs::GBS,2,Prologue,1:30,,2

@@ -1,0 +1,29 @@
+GBS2VGM - Game Boy Sound to VGM Converter
+Version: 1.0.0
+Release Date: 2026-02-03
+Authors: Claude & Denjhang
+
+Build Information:
+- Compiler: GCC (MinGW-w64)
+- Platform: Windows x64
+- 7z SDK: Integrated
+- zlib: Integrated
+
+Features:
+- Single file conversion (gbs2vgm.exe)
+- Batch conversion with M3U support (gbs2vgm_batch.exe)
+- 7z/ZIP archive support
+- Automatic metadata extraction
+- Complete GD3 tag support
+- ZIP output packaging
+
+Tools Included:
+- gbs2vgm.exe - Single file converter
+- gbs2vgm_batch.exe - Batch converter
+- vgm_parser.exe - VGM file analyzer
+- gd3_reader.exe - GD3 tag reader
+- test_filename_parser.exe - Filename parser tester
+
+License: GNU GPL v1 or later
+
+For more information, see README.md
