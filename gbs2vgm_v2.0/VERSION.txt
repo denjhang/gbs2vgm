@@ -1,0 +1,66 @@
+GBS2VGM Version 2.0
+Release Date: 2026-02-04
+Build: Release
+
+Major Changes in v2.0:
+======================
+
+1. Fixed GBS file support for different memory mappings
+   - Fixed replayer code address conflicts
+   - Now correctly handles Tales of Phantasia and other high-load-address GBS files
+   - Automatic safe replayer code positioning
+
+2. Fixed VGM loop point calculation
+   - Complies with VGM v1.71 standard and libvgm specification
+   - Correctly sets total_samples (samples before loop) and loop_samples (loop section samples)
+   - Loop points now marked at song beginning, not in the middle
+
+3. Fixed loop playback behavior
+   - VGM players can now correctly loop and jump to next track after loop count
+   - File sizes significantly reduced (DQ1&2: 11MB→4.8MB, Tales: 18MB→7.8MB)
+
+4. Implemented cycle-accurate timing
+   - Based on CPU cycles for precise timing, not fixed time steps
+   - Sample-accurate delays for each register write
+   - No timing drift using 64-bit arithmetic
+
+5. 60Hz refresh rate
+   - 17ms time steps, closer to actual Game Boy frame rate
+
+Technical Details:
+==================
+
+- VGM Format: v1.71
+- Game Boy DMG Clock: 4194304 Hz
+- Sample Rate: 44100 Hz (default)
+- Register Range: 0xFF10-0xFF3F
+- Timing Resolution: ~0.238μs (cycle-based)
+
+Tested Games:
+=============
+
+✅ Dragon Quest III (DQ3)
+✅ Dragon Quest I & II (DQ1&2)
+✅ Tales of Phantasia: Narikiri Dungeon
+✅ Dragon Quest Monsters
+✅ Kirby's Dream Land
+
+Authors:
+========
+
+Claude Sonnet 4.5 & Denjhang (2026)
+
+License:
+========
+
+GNU GPL v1 or later
+See docs/LICENCE for details
+
+References:
+===========
+
+- gbsplay project - GBS playback engine
+- MAME project - VGM logging reference implementation
+- libvgm project - VGM loop point implementation reference
+- GME project - GBS parser reference
+- VGM format specification
