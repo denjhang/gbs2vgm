@@ -1,0 +1,22 @@
+GBS2VGM Version 3.0
+Release Date: 2026-02-05
+Build: Release
+
+Components:
+- gbs2vgm_batch v3.0
+- vgm_trim v1.0 (from vgmtools)
+- vgmlpfnd v1.0 (integrated)
+- Smart trimming algorithm v1.0
+
+Features:
+- GBS to VGM conversion
+- Smart loop point detection
+- Automatic VGM trimming
+- M3U playlist support
+- One-click complete workflow
+
+Maintainers:
+- Claude Sonnet 4.5
+- Denjhang
+
+License: GNU GPL v1 or later

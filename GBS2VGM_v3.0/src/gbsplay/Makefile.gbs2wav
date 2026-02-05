@@ -1,0 +1,42 @@
+# Simple Makefile for gbs2wav
+# Standalone GBS to WAV converter with M3U support
+
+CC = gcc
+CFLAGS = -Wall -O2 -D_XOPEN_SOURCE=500 -D_POSIX_C_SOURCE=200809L
+LDFLAGS = -lm -lz
+
+# Source files
+SRCS_M3U = m3u_parser.c
+SRCS_GBS2WAV = gbs2wav.c
+SRCS_LIBGBS = gbcpu.c gbhw.c gblfsr.c mapper.c gbs.c crc32.c util.c
+
+# Object files
+OBJS_M3U = $(SRCS_M3U:.c=.o)
+OBJS_GBS2WAV = $(SRCS_GBS2WAV:.c=.o)
+OBJS_LIBGBS = $(SRCS_LIBGBS:.c=.o)
+
+# Target executable
+TARGET = gbs2wav
+
+# Default target
+all: $(TARGET)
+
+# Build gbs2wav
+$(TARGET): $(OBJS_GBS2WAV) $(OBJS_M3U) $(OBJS_LIBGBS)
+	$(CC) -o $@ $^ $(LDFLAGS)
+	@echo "Build complete: $(TARGET)"
+
+# Compile object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Clean build artifacts
+clean:
+	rm -f $(OBJS_GBS2WAV) $(OBJS_M3U) $(OBJS_LIBGBS) $(TARGET)
+	@echo "Clean complete"
+
+# Test with dq3 files
+test: $(TARGET)
+	./$(TARGET) -o output_wav ../dq3/CGB-BD3J-JPN.m3u
+
+.PHONY: all clean test

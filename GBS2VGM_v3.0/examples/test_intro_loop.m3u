@@ -1,0 +1,19 @@
+# Test M3U with intro/loop information
+# @TITLE       Test Game
+# @COMPOSER    Test Composer
+
+# Test cases:
+# 1. Entire song is loop (using "-")
+test.gbs::GBS,0,Full Loop Track,2:00,-,3,10
+
+# 2. Intro + loop (using "intro-")
+test.gbs::GBS,1,Intro and Loop,3:00,0:30-,3,10
+
+# 3. Intro + explicit loop length (using "intro-loop")
+test.gbs::GBS,2,Explicit Loop,3:00,0:30-2:30,3,10
+
+# 4. No loop info (old format, backward compatible)
+test.gbs::GBS,3,No Loop Info,1:30,,1
+
+# 5. Just loop length (no intro)
+test.gbs::GBS,4,Loop Only,2:30,2:30,3,10
